@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fernando Cortés Calderón</title>
+<meta name="description" content="Fernando Cortés Calderón — soporte técnico en transición hacia ciberseguridad, Ciudad de México.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #121212;
+    --panel: #1A1A18;
+    --text: #F5F0E8;
+    --text-muted: #9C9689;
+    --accent: #C9A24B;
+    --accent2: #3FA089;
+    --line: #2E2E2A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: radial-gradient(ellipse 900px 600px at 50% -10%, #1C1B17 0%, var(--bg) 60%);
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 5rem;
+  }
+
+  .top-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+  }
+
+  .monogram {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .brand-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.45;
+  }
+
+  .brand-name .line1,
+  .brand-name .line2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.3rem, 4.2vw, 1.65rem);
+    font-weight: 600;
+    letter-spacing: -0.005em;
+  }
+
+  .brand-name .line2 {
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-top: 0.1rem;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .lang-switch button {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 0.35rem 0.75rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    transition: background 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .lang-switch button.active {
+    background: var(--accent2);
+    color: #121212;
+    font-weight: 500;
+  }
+
+  .lang-switch button:hover:not(.active) { color: var(--text); }
+
+  .tagline {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+
+  .top-row, .brand, .tagline {
+    opacity: 0;
+    transform: translateY(8px);
+    animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .top-row { animation-delay: 0.05s; }
+  .brand   { animation-delay: 0.18s; }
+  .tagline { animation-delay: 0.32s; }
+
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+
+  /* ---- Terminal ---- */
+  .terminal {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow:
+      0 30px 60px -25px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(201, 162, 75, 0.06),
+      0 1px 0 rgba(255, 255, 255, 0.03) inset;
+    opacity: 0;
+    animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.45s;
+  }
+
+  .terminal-chrome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--line);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .terminal-title {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .terminal-body {
+    padding: 1.5rem 1.5rem 0.75rem;
+    max-height: 420px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+  }
+
+  .terminal-body::-webkit-scrollbar { width: 6px; }
+  .terminal-body::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+
+  .output-block {
+    margin-bottom: 1.4rem;
+  }
+
+  .echoed {
+    color: var(--accent2);
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .response {
+    color: var(--text);
+    max-width: 62ch;
+  }
+
+  .response a { color: var(--accent); }
+
+  .response.error { color: var(--text-muted); font-style: italic; }
+
+  .terminal-inputline {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.25rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .prompt {
+    color: var(--accent2);
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  #cmd-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.9rem;
+  }
+
+  .cursor-blink {
+    color: var(--accent2);
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink { 50% { opacity: 0; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor-blink { animation: none; }
+  }
+
+  /* ---- Command pills ---- */
+  .command-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+  }
+
+  .command-pills button {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--text-muted);
+    border-radius: 3px;
+    padding: 0.5rem 0.9rem;
+    font-family: inherit;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .command-pills button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ---- Attribution ---- */
+  .attribution {
+    margin-top: 3rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: center;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 2.5rem 1rem 3rem; }
+    .terminal-body { max-height: 340px; }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent2);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top-row">
+    <div class="lang-switch" role="group" aria-label="Selector de idioma">
+      <button type="button" data-lang="es" class="active">ES</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="pt">PT</button>
+    </div>
+  </div>
+
+  <div class="brand">
+    <div class="monogram">FC</div>
+    <div class="brand-name">
+      <span class="line1">Fernando</span>
+      <span class="line2">Cortés Calderón</span>
+    </div>
+  </div>
+  <p class="tagline" data-i18n="tagline">soporte técnico → ciberseguridad</p>
+
+  <div class="terminal">
+    <div class="terminal-chrome">
+      <span class="terminal-title">fernando@cortescalderon</span>
+    </div>
+    <div class="terminal-body" id="output"></div>
+    <div class="terminal-inputline">
+      <span class="prompt" data-i18n="promptLabel">visitante@sitio:~$</span>
+      <input id="cmd-input" type="text" autocomplete="off" spellcheck="false" data-i18n-placeholder="inputPlaceholder" placeholder="escribe un comando…">
+      <span class="cursor-blink">▍</span>
+    </div>
+  </div>
+
+  <div class="command-pills" id="pills">
+    <button data-cmd="experiencia" data-i18n="pillExp">experiencia</button>
+    <button data-cmd="certificaciones" data-i18n="pillCerts">certificaciones</button>
+    <button data-cmd="proyectos" data-i18n="pillProjects">proyectos</button>
+    <button data-cmd="contacto" data-i18n="pillContact">contacto</button>
+    <button data-cmd="ayuda" data-i18n="pillHelp">ayuda</button>
+  </div>
+
+  <p class="attribution" data-i18n="attribution">Diseñado por Fernando · Construido con Claude</p>
+
+</div>
+
+<script>
+  const translations = {
+    es: {
+      tagline: "soporte técnico → ciberseguridad",
+      promptLabel: "visitante@sitio:~$",
+      inputPlaceholder: "escribe un comando…",
+      pillExp: "experiencia",
+      pillCerts: "certificaciones",
+      pillProjects: "proyectos",
+      pillContact: "contacto",
+      pillHelp: "ayuda",
+      attribution: "Diseñado por Fernando · Construido con Claude",
+      responses: {
+        soy: "Soy Fernando Cortés Calderón. Vivo en Ciudad de México, trabajo en soporte técnico y estoy encaminando esa experiencia hacia la ciberseguridad — de forma deliberada, no como una idea vaga. Estudio Java en la universidad, hablo español, inglés y portugués, y cuando no estoy resolviendo tickets, construyo mis propios proyectos digitales.<br><br>Escribe <strong>experiencia</strong>, <strong>certificaciones</strong> o <strong>proyectos</strong> para conocer más, o <strong>contacto</strong> si quieres platicar.",
+        experiencia: "Llevo más de 4 años en soporte técnico. Empecé en Rackspace México (2021), donde documenté procesos de registro de dominios y configuración de DNS. Seguí en Zebra Technologies (2023), aplicando ya algo de lo que aprendía en mis estudios de seguridad informática para resolver casos sin necesidad de escalar. Pasé por AT&T (2025), manteniendo siempre comunicación directa con los clientes por chat, correo y teléfono. Ahora trabajo en Avantika, en primera línea de soporte nivel 1.<br><br>Algo se repite en todos estos roles: diagnóstico rápido, escalo cuando hace falta, y no dejo un caso sin explicación clara para quien lo vivió.",
+        certificaciones: "Estoy en proceso de certificarme en <strong>CompTIA Security+</strong>, <strong>Linux+</strong> y <strong>PenTest+</strong> — las tres en curso. Es el siguiente paso concreto hacia ciberseguridad, no un plan vago: la lógica es tomar lo que ya sé de soporte técnico y llevarlo hacia donde quiero estar.",
+        proyectos: 'Fuera del soporte técnico, construyo cosas. Fundé <strong>Nexus Labs AI</strong>, una empresa de desarrollo de software donde experimento con ideas propias y aprendo haciendo — puedes conocerla en <a href="https://nexuslabsai.dev" target="_blank" rel="noopener">nexuslabsai.dev</a>.',
+        contacto: 'Puedes escribirme a <a href="mailto:oportunidades@cortescalderon.com">oportunidades@cortescalderon.com</a>, o encontrarme en <a href="https://www.linkedin.com/in/fernandocortesc/" target="_blank" rel="noopener">LinkedIn</a> y <a href="https://github.com/fernandocortescalderon" target="_blank" rel="noopener">GitHub</a>.',
+        ayuda: "Comandos disponibles: <strong>soy</strong> · <strong>experiencia</strong> · <strong>certificaciones</strong> · <strong>proyectos</strong> · <strong>contacto</strong> · <strong>limpiar</strong>",
+        unknown: (cmd) => `Comando no reconocido: "${cmd}". Escribe <strong>ayuda</strong> para ver las opciones disponibles.`
+      }
+    },
+    en: {
+      tagline: "IT support → cybersecurity",
+      promptLabel: "visitor@site:~$",
+      inputPlaceholder: "type a command…",
+      pillExp: "experience",
+      pillCerts: "certifications",
+      pillProjects: "projects",
+      pillContact: "contact",
+      pillHelp: "help",
+      attribution: "Designed by Fernando · Built with Claude",
+      responses: {
+        soy: "I'm Fernando Cortés Calderón. I live in Mexico City, work in technical support, and I'm steering that experience toward cybersecurity — deliberately, not as a vague idea. I'm studying Java at university, I speak Spanish, English, and Portuguese, and when I'm not resolving tickets, I build my own digital projects.<br><br>Type <strong>experience</strong>, <strong>certifications</strong>, or <strong>projects</strong> to learn more, or <strong>contact</strong> if you want to talk.",
+        experiencia: "I've spent 4+ years in technical support. I started at Rackspace Mexico (2021), documenting domain registration and DNS configuration processes. Then Zebra Technologies (2023), already applying some of what I was learning in my cybersecurity studies to resolve cases without needing to escalate. I went through AT&T (2025), always keeping direct communication with clients via chat, email, and phone. Now I work at Avantika, on the front line of level-1 support.<br><br>Something repeats across all these roles: fast diagnosis, escalating when needed, and never leaving a case without a clear explanation for the person who lived it.",
+        certificaciones: "I'm working toward <strong>CompTIA Security+</strong>, <strong>Linux+</strong>, and <strong>PenTest+</strong> — all three in progress. It's the concrete next step toward cybersecurity, not a vague plan: the logic is taking what I already know from technical support and steering it toward where I want to be.",
+        proyectos: 'Outside of technical support, I build things. I founded <strong>Nexus Labs AI</strong>, a software development company where I experiment with my own ideas and learn by doing — you can check it out at <a href="https://nexuslabsai.dev" target="_blank" rel="noopener">nexuslabsai.dev</a>.',
+        contacto: 'You can email me at <a href="mailto:oportunidades@cortescalderon.com">oportunidades@cortescalderon.com</a>, or find me on <a href="https://www.linkedin.com/in/fernandocortesc/" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://github.com/fernandocortescalderon" target="_blank" rel="noopener">GitHub</a>.',
+        ayuda: "Available commands: <strong>soy</strong> (who I am) · <strong>experience</strong> · <strong>certifications</strong> · <strong>projects</strong> · <strong>contact</strong> · <strong>clear</strong>",
+        unknown: (cmd) => `Command not recognized: "${cmd}". Type <strong>help</strong> to see the available options.`
+      }
+    },
+    pt: {
+      tagline: "suporte técnico → cibersegurança",
+      promptLabel: "visitante@site:~$",
+      inputPlaceholder: "digite um comando…",
+      pillExp: "experiência",
+      pillCerts: "certificações",
+      pillProjects: "projetos",
+      pillContact: "contato",
+      pillHelp: "ajuda",
+      attribution: "Desenhado por Fernando · Construído com Claude",
+      responses: {
+        soy: "Sou Fernando Cortés Calderón. Vivo na Cidade do México, trabalho em suporte técnico e estou direcionando essa experiência para a cibersegurança — de forma deliberada, não como uma ideia vaga. Estudo Java na universidade, falo espanhol, inglês e português, e quando não estou resolvendo tickets, construo meus próprios projetos digitais.<br><br>Digite <strong>experiência</strong>, <strong>certificações</strong> ou <strong>projetos</strong> para saber mais, ou <strong>contato</strong> se quiser conversar.",
+        experiencia: "Tenho mais de 4 anos em suporte técnico. Comecei na Rackspace México (2021), documentando processos de registro de domínios e configuração de DNS. Depois Zebra Technologies (2023), já aplicando parte do que aprendia nos meus estudos de segurança da informação para resolver casos sem precisar escalar. Passei pela AT&T (2025), sempre mantendo comunicação direta com os clientes por chat, e-mail e telefone. Agora trabalho na Avantika, na linha de frente do suporte nível 1.<br><br>Algo se repete em todos esses papéis: diagnóstico rápido, escalo quando necessário, e nunca deixo um caso sem uma explicação clara para quem o viveu.",
+        certificaciones: "Estou em processo de certificação em <strong>CompTIA Security+</strong>, <strong>Linux+</strong> e <strong>PenTest+</strong> — as três em andamento. É o próximo passo concreto rumo à cibersegurança, não um plano vago: a lógica é pegar o que já sei de suporte técnico e direcionar para onde quero estar.",
+        proyectos: 'Fora do suporte técnico, eu construo coisas. Fundei a <strong>Nexus Labs AI</strong>, uma empresa de desenvolvimento de software onde experimento com ideias próprias e aprendo fazendo — você pode conhecê-la em <a href="https://nexuslabsai.dev" target="_blank" rel="noopener">nexuslabsai.dev</a>.',
+        contacto: 'Você pode me escrever em <a href="mailto:oportunidades@cortescalderon.com">oportunidades@cortescalderon.com</a>, ou me encontrar no <a href="https://www.linkedin.com/in/fernandocortesc/" target="_blank" rel="noopener">LinkedIn</a> e <a href="https://github.com/fernandocortescalderon" target="_blank" rel="noopener">GitHub</a>.',
+        ayuda: "Comandos disponíveis: <strong>soy</strong> (quem sou) · <strong>experiência</strong> · <strong>certificações</strong> · <strong>projetos</strong> · <strong>contato</strong> · <strong>limpar</strong>",
+        unknown: (cmd) => `Comando não reconhecido: "${cmd}". Digite <strong>ajuda</strong> para ver as opções disponíveis.`
+      }
+    }
+  };
+
+  const synonyms = {
+    soy: ['soy', 'whoami', 'who'],
+    experiencia: ['experiencia', 'experience', 'experiência'],
+    certificaciones: ['certificaciones', 'certifications', 'certificados', 'certificações'],
+    proyectos: ['proyectos', 'projects', 'projetos'],
+    contacto: ['contacto', 'contact', 'contato'],
+    ayuda: ['ayuda', 'help', 'ajuda'],
+    limpiar: ['limpiar', 'clear', 'limpar']
+  };
+
+  let currentLang = 'es';
+  const output = document.getElementById('output');
+  const input = document.getElementById('cmd-input');
+
+  function resolveCommand(raw) {
+    const norm = raw.trim().toLowerCase();
+    for (const [canonical, names] of Object.entries(synonyms)) {
+      if (names.includes(norm)) return canonical;
+    }
+    return null;
+  }
+
+  function typeWriter(el, html, speed = 10) {
+    // Render as plain text typing effect, then swap to full HTML at the end
+    // to preserve tags like <strong> and <a> correctly.
+    const plain = html.replace(/<[^>]+>/g, '');
+    let i = 0;
+    const temp = document.createElement('span');
+    el.appendChild(temp);
+    function step() {
+      if (i <= plain.length) {
+        temp.textContent = plain.slice(0, i);
+        i += 2;
+        output.scrollTop = output.scrollHeight;
+        requestAnimationFrame(() => setTimeout(step, speed));
+      } else {
+        temp.outerHTML = html;
+        output.scrollTop = output.scrollHeight;
+      }
+    }
+    step();
+  }
+
+  function runCommand(canonical, echo) {
+    const dict = translations[currentLang];
+    const block = document.createElement('div');
+    block.className = 'output-block';
+
+    if (echo !== false) {
+      const echoLine = document.createElement('div');
+      echoLine.className = 'echoed';
+      echoLine.textContent = `${dict.promptLabel} ${echo}`;
+      block.appendChild(echoLine);
+    }
+
+    if (canonical === 'limpiar') {
+      output.innerHTML = '';
+      return;
+    }
+
+    const resp = document.createElement('div');
+    resp.className = 'response';
+    block.appendChild(resp);
+    output.appendChild(block);
+    output.scrollTop = output.scrollHeight;
+
+    let text;
+    if (canonical && dict.responses[canonical]) {
+      text = dict.responses[canonical];
+    } else {
+      resp.classList.add('error');
+      text = dict.responses.unknown(echo || canonical);
+    }
+    typeWriter(resp, text, 8);
+  }
+
+  function bootIntro() {
+    const dict = translations[currentLang];
+    const block = document.createElement('div');
+    block.className = 'output-block';
+    const resp = document.createElement('div');
+    resp.className = 'response';
+    block.appendChild(resp);
+    output.appendChild(block);
+    typeWriter(resp, dict.responses.soy, 8);
+  }
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && input.value.trim() !== '') {
+      const raw = input.value;
+      const canonical = resolveCommand(raw);
+      runCommand(canonical, raw);
+      input.value = '';
+    }
+  });
+
+  document.querySelectorAll('#pills button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cmd = btn.dataset.cmd;
+      runCommand(cmd, btn.textContent);
+    });
+  });
+
+  function applyLang(lang) {
+    currentLang = lang;
+    const dict = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] !== undefined) el.placeholder = dict[key];
+    });
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    localStorage.setItem('site-lang', lang);
+  }
+
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyLang(btn.dataset.lang);
+      output.innerHTML = '';
+      bootIntro();
+    });
+  });
+
+  const savedLang = localStorage.getItem('site-lang');
+  if (savedLang && translations[savedLang]) {
+    currentLang = savedLang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[savedLang][key] !== undefined) el.innerHTML = translations[savedLang][key];
+    });
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === savedLang);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {});
+  bootIntro();
+</script>
+</body>
+</html>
