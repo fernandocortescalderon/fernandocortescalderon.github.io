@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cortescalderon.com/sitemap.xml
