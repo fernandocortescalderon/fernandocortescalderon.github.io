@@ -3,8 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fernando Cortés Calderón</title>
+<title>Fernando Cortés Calderón — Soporte técnico → Ciberseguridad</title>
 <meta name="description" content="Fernando Cortés Calderón — soporte técnico en transición hacia ciberseguridad, Ciudad de México.">
+<link rel="canonical" href="https://fernandocortescalderon.github.io/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fernando Cortés Calderón">
+<meta property="og:description" content="Soporte técnico en transición hacia ciberseguridad. Ciudad de México.">
+<meta property="og:url" content="https://fernandocortescalderon.github.io/">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fernando Cortés Calderón">
+<meta name="twitter:description" content="Soporte técnico en transición hacia ciberseguridad. Ciudad de México.">
+
+<!-- Favicon: monograma FC inline, sin archivo externo -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23121212' stroke='%23C9A24B' stroke-width='2'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='24' fill='%23C9A24B' text-anchor='middle'%3EFC%3C/text%3E%3C/svg%3E">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
@@ -311,6 +331,8 @@
   <div class="command-pills" id="pills">
     <button data-cmd="experiencia" data-i18n="pillExp">experiencia</button>
     <button data-cmd="certificaciones" data-i18n="pillCerts">certificaciones</button>
+    <button data-cmd="skills" data-i18n="pillSkills">skills</button>
+    <button data-cmd="educacion" data-i18n="pillEdu">educación</button>
     <button data-cmd="proyectos" data-i18n="pillProjects">proyectos</button>
     <button data-cmd="contacto" data-i18n="pillContact">contacto</button>
     <button data-cmd="ayuda" data-i18n="pillHelp">ayuda</button>
@@ -328,17 +350,25 @@
       inputPlaceholder: "escribe un comando…",
       pillExp: "experiencia",
       pillCerts: "certificaciones",
+      pillSkills: "skills",
+      pillEdu: "educación",
       pillProjects: "proyectos",
       pillContact: "contacto",
       pillHelp: "ayuda",
       attribution: "Diseñado por Fernando · Construido con Claude",
       responses: {
-        soy: "Soy Fernando Cortés Calderón. Vivo en Ciudad de México, trabajo en soporte técnico y estoy encaminando esa experiencia hacia la ciberseguridad — de forma deliberada, no como una idea vaga. Estudio Java en la universidad, hablo español, inglés y portugués, y cuando no estoy resolviendo tickets, construyo mis propios proyectos digitales.<br><br>Escribe <strong>experiencia</strong>, <strong>certificaciones</strong> o <strong>proyectos</strong> para conocer más, o <strong>contacto</strong> si quieres platicar.",
-        experiencia: "Llevo más de 4 años en soporte técnico. Empecé en Rackspace México (2021), donde documenté procesos de registro de dominios y configuración de DNS. Seguí en Zebra Technologies (2023), aplicando ya algo de lo que aprendía en mis estudios de seguridad informática para resolver casos sin necesidad de escalar. Pasé por AT&T (2025), manteniendo siempre comunicación directa con los clientes por chat, correo y teléfono. Ahora trabajo en Avantika, en primera línea de soporte nivel 1.<br><br>Algo se repite en todos estos roles: diagnóstico rápido, escalo cuando hace falta, y no dejo un caso sin explicación clara para quien lo vivió.",
+        soy: "Soy Fernando Cortés Calderón. Vivo en Ciudad de México, trabajo en soporte técnico y estoy encaminando esa experiencia hacia la ciberseguridad — de forma deliberada, no como una idea vaga. Curso la Licenciatura en Informática, hablo español, inglés y portugués, y cuando no estoy resolviendo tickets, construyo mis propios proyectos digitales.<br><br>Escribe <strong>experiencia</strong>, <strong>certificaciones</strong> o <strong>proyectos</strong> para conocer más, o <strong>contacto</strong> si quieres platicar.",
+        experiencia: "Llevo más de 4 años en soporte técnico, casi siempre en entornos corporativos globales y trilingües. Empecé en Computacenter México y Rackspace (2021–2022), administrando cuentas en Active Directory y configurando DNS. Seguí en PPG Business Services y Zebra Technologies (2023), ya en soporte nivel 1 para usuarios de habla portuguesa. De ahí pasé a coordinar incidentes críticos como supervisor de Command Center en Eglobal (2023–2024), y después a AT&amp;T y Codyfin (2024–2026), en soporte multilingüe y administración de cuentas. Ahora trabajo en Avantika, en primera línea de soporte nivel 1.<br><br>El patrón se repite en todos estos roles: diagnóstico rápido, escalación cuando hace falta, y comunicación clara en cualquiera de los tres idiomas que hablo.<br><br>2021 │ Computacenter México — Service Desk Analista N1<br>2022 │ Rackspace — Soporte Correo &amp; DNS<br>2023 │ PPG Business Services — Service Desk N1<br>2023 │ Zebra Technologies — Service Desk N1<br>2023–2024 │ Eglobal — Supervisor Command Center<br>2024–2025 │ AT&amp;T — Representante de Servicio al Cliente<br>2025–2026 │ Codyfin — Soporte Multilingüe (Portugués)<br>2026 │ Avantika — Soporte N1 (actual)",
         certificaciones: "Estoy en proceso de certificarme en <strong>CompTIA Security+</strong>, <strong>Linux+</strong> y <strong>PenTest+</strong> — las tres en curso. Es el siguiente paso concreto hacia ciberseguridad, no un plan vago: la lógica es tomar lo que ya sé de soporte técnico y llevarlo hacia donde quiero estar.",
-        proyectos: 'Fuera del soporte técnico, construyo cosas. Fundé <strong>Nexus Labs AI</strong>, una empresa de desarrollo de software donde experimento con ideas propias y aprendo haciendo — puedes conocerla en <a href="https://nexuslabsai.dev" target="_blank" rel="noopener">nexuslabsai.dev</a>.',
-        contacto: 'Puedes escribirme a <a href="mailto:oportunidades@cortescalderon.com">oportunidades@cortescalderon.com</a>, o encontrarme en <a href="https://www.linkedin.com/in/fernandocortesc/" target="_blank" rel="noopener">LinkedIn</a> y <a href="https://github.com/fernandocortescalderon" target="_blank" rel="noopener">GitHub</a>.',
-        ayuda: "Comandos disponibles: <strong>soy</strong> · <strong>experiencia</strong> · <strong>certificaciones</strong> · <strong>proyectos</strong> · <strong>contacto</strong> · <strong>limpiar</strong>",
+        skills: "<strong>Sistemas</strong><br>Windows (avanzado) · Linux (conocimiento operativo, CompTIA Linux+ en curso)<br><br><strong>Identidad y productividad</strong><br>Active Directory · Office 365 · Hosted Exchange<br><br><strong>Redes</strong><br>Configuración DNS · diagnóstico TCP/IP básico · resolución de conectividad<br><br><strong>Operaciones TI</strong><br>Gestión de tickets · escalación por SLA · respuesta a incidentes · soporte remoto<br><br><strong>Programación</strong><br>Python (básico) · Java (en curso, universidad)<br><br><strong>Seguridad</strong> (en desarrollo)<br>CompTIA Security+ y PenTest+, en curso<br><br><strong>Idiomas</strong><br>Español (nativo) · Inglés (C1) · Portugués (C1)",
+        educacion: "Licenciatura en Informática — Universidad de Londres (2026–presente)<br>Ingeniería en Seguridad Informática — Instituto Artek (2021–2022, suspendida)<br>Marketing — Centro Universitario Incarnate Word (2013–2015, inconclusa)",
+        proyectos: 'Fuera del soporte técnico, construyo cosas. Fundé <strong>Nexus Labs AI</strong> en marzo de 2026 — una empresa de desarrollo de software y servicios TI, con registro de marca en trámite ante el IMPI (clases 41 y 42) e incorporación en curso como Sociedad por Acciones Simplificada. Ahí lideré el desarrollo de <strong>gestorOS</strong>, una plataforma de punto de venta y gestión para restaurantes, incluyendo su estrategia de precios y la documentación legal de protección de datos que exige México. Puedes conocerlas en <a href="https://nexuslabsai.dev" target="_blank" rel="noopener">nexuslabsai.dev</a> y <a href="https://gestoros.app" target="_blank" rel="noopener">gestoros.app</a>.',
+        timeline: "2021 │ Computacenter México — Service Desk Analista N1<br>2022 │ Rackspace — Soporte Correo &amp; DNS<br>2023 │ PPG Business Services — Service Desk N1<br>2023 │ Zebra Technologies — Service Desk N1<br>2023–2024 │ Eglobal — Supervisor Command Center<br>2024–2025 │ AT&amp;T — Representante de Servicio al Cliente<br>2025–2026 │ Codyfin — Soporte Multilingüe (Portugués)<br>2026 │ Avantika — Soporte N1 (actual)",
+        blog: "Todavía no he publicado nada aquí. Cuando escriba sobre ciberseguridad o lo que vaya aprendiendo en el camino, va a aparecer en este espacio. Por ahora, la forma más rápida de enterarte es en LinkedIn.",
+        privacidad: "Este sitio no usa cookies de seguimiento ni recopila datos personales. Solo guardo tu preferencia de idioma en tu navegador (localStorage) para no pedírtela cada vez — nada más.",
+        contacto: 'Puedes escribirme a <a href="mailto:oportunidades@cortescalderon.com">oportunidades@cortescalderon.com</a>, o encontrarme en <a href="https://www.linkedin.com/in/fernandocortesc/" target="_blank" rel="noopener">LinkedIn</a> y <a href="https://github.com/fernandocortescalderon" target="_blank" rel="noopener">GitHub</a>.<br><br><img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&color=245-240-232&bgcolor=18-18-16&data=https://www.linkedin.com/in/fernandocortesc/" alt="Código QR a LinkedIn" width="110" height="110" style="border-radius:4px;margin-top:0.5rem;">',
+        ayuda: "Comandos disponibles: <strong>soy</strong> · <strong>experiencia</strong> · <strong>certificaciones</strong> · <strong>skills</strong> · <strong>educacion</strong> · <strong>proyectos</strong> · <strong>blog</strong> · <strong>privacidad</strong> · <strong>contacto</strong> · <strong>limpiar</strong>",
+        sudo: "Permiso denegado. Ni yo tengo acceso root a mi propia vida — pero buen intento. 🔒",
         unknown: (cmd) => `Comando no reconocido: "${cmd}". Escribe <strong>ayuda</strong> para ver las opciones disponibles.`
       }
     },
@@ -348,17 +378,25 @@
       inputPlaceholder: "type a command…",
       pillExp: "experience",
       pillCerts: "certifications",
+      pillSkills: "skills",
+      pillEdu: "education",
       pillProjects: "projects",
       pillContact: "contact",
       pillHelp: "help",
       attribution: "Designed by Fernando · Built with Claude",
       responses: {
-        soy: "I'm Fernando Cortés Calderón. I live in Mexico City, work in technical support, and I'm steering that experience toward cybersecurity — deliberately, not as a vague idea. I'm studying Java at university, I speak Spanish, English, and Portuguese, and when I'm not resolving tickets, I build my own digital projects.<br><br>Type <strong>experience</strong>, <strong>certifications</strong>, or <strong>projects</strong> to learn more, or <strong>contact</strong> if you want to talk.",
-        experiencia: "I've spent 4+ years in technical support. I started at Rackspace Mexico (2021), documenting domain registration and DNS configuration processes. Then Zebra Technologies (2023), already applying some of what I was learning in my cybersecurity studies to resolve cases without needing to escalate. I went through AT&T (2025), always keeping direct communication with clients via chat, email, and phone. Now I work at Avantika, on the front line of level-1 support.<br><br>Something repeats across all these roles: fast diagnosis, escalating when needed, and never leaving a case without a clear explanation for the person who lived it.",
+        soy: "I'm Fernando Cortés Calderón. I live in Mexico City, work in technical support, and I'm steering that experience toward cybersecurity — deliberately, not as a vague idea. I'm pursuing a B.S. in Computer Science, I speak Spanish, English, and Portuguese, and when I'm not resolving tickets, I build my own digital projects.<br><br>Type <strong>experience</strong>, <strong>certifications</strong>, or <strong>projects</strong> to learn more, or <strong>contact</strong> if you want to talk.",
+        experiencia: "I've spent 4+ years in technical support, mostly in global, trilingual corporate environments. I started at Computacenter Mexico and Rackspace (2021–2022), administering Active Directory accounts and configuring DNS. Then PPG Business Services and Zebra Technologies (2023), already at level-1 support for Portuguese-speaking users. From there I moved into coordinating critical incidents as a Command Center Supervisor at Eglobal (2023–2024), then AT&T and Codyfin (2024–2026), in multilingual support and account administration. Now I work at Avantika, on the front line of level-1 support.<br><br>Something repeats across all these roles: fast diagnosis, escalating when needed, and clear communication in any of the three languages I speak.<br><br>2021 │ Computacenter Mexico — Service Desk Analyst L1<br>2022 │ Rackspace — Email &amp; DNS Support<br>2023 │ PPG Business Services — Service Desk L1<br>2023 │ Zebra Technologies — Service Desk L1<br>2023–2024 │ Eglobal — Command Center Supervisor<br>2024–2025 │ AT&amp;T — Customer Service Representative<br>2025–2026 │ Codyfin — Multilingual Support (Portuguese)<br>2026 │ Avantika — L1 Support (current)",
         certificaciones: "I'm working toward <strong>CompTIA Security+</strong>, <strong>Linux+</strong>, and <strong>PenTest+</strong> — all three in progress. It's the concrete next step toward cybersecurity, not a vague plan: the logic is taking what I already know from technical support and steering it toward where I want to be.",
-        proyectos: 'Outside of technical support, I build things. I founded <strong>Nexus Labs AI</strong>, a software development company where I experiment with my own ideas and learn by doing — you can check it out at <a href="https://nexuslabsai.dev" target="_blank" rel="noopener">nexuslabsai.dev</a>.',
-        contacto: 'You can email me at <a href="mailto:oportunidades@cortescalderon.com">oportunidades@cortescalderon.com</a>, or find me on <a href="https://www.linkedin.com/in/fernandocortesc/" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://github.com/fernandocortescalderon" target="_blank" rel="noopener">GitHub</a>.',
-        ayuda: "Available commands: <strong>soy</strong> (who I am) · <strong>experience</strong> · <strong>certifications</strong> · <strong>projects</strong> · <strong>contact</strong> · <strong>clear</strong>",
+        skills: "<strong>Systems</strong><br>Windows (advanced) · Linux (working knowledge, CompTIA Linux+ in progress)<br><br><strong>Identity &amp; Productivity</strong><br>Active Directory · Office 365 · Hosted Exchange<br><br><strong>Networking</strong><br>DNS configuration · basic TCP/IP troubleshooting · connectivity diagnostics<br><br><strong>IT Operations</strong><br>Ticket management · SLA-based escalation · incident response · remote support<br><br><strong>Programming</strong><br>Python (basic) · Java (in progress, university)<br><br><strong>Security</strong> (in development)<br>CompTIA Security+ and PenTest+, in progress<br><br><strong>Languages</strong><br>Spanish (native) · English (C1) · Portuguese (C1)",
+        educacion: "B.S. in Computer Science — Universidad de Londres (2026–present)<br>B.S. in Information Security Engineering — Instituto Artek (2021–2022, suspended)<br>Marketing — Centro Universitario Incarnate Word (2013–2015, incomplete)",
+        proyectos: 'Outside of technical support, I build things. I founded <strong>Nexus Labs AI</strong> in March 2026 — a software development and IT services company, with trademark registration in process before Mexico\'s IMPI (Classes 41 &amp; 42) and incorporation underway as a Sociedad por Acciones Simplificada. There I led the development of <strong>gestorOS</strong>, a point-of-sale and management platform for restaurants, including its pricing strategy and the data-protection compliance documentation required in Mexico. You can check them out at <a href="https://nexuslabsai.dev" target="_blank" rel="noopener">nexuslabsai.dev</a> and <a href="https://gestoros.app" target="_blank" rel="noopener">gestoros.app</a>.',
+        timeline: "2021 │ Computacenter Mexico — Service Desk Analyst L1<br>2022 │ Rackspace — Email &amp; DNS Support<br>2023 │ PPG Business Services — Service Desk L1<br>2023 │ Zebra Technologies — Service Desk L1<br>2023–2024 │ Eglobal — Command Center Supervisor<br>2024–2025 │ AT&amp;T — Customer Service Representative<br>2025–2026 │ Codyfin — Multilingual Support (Portuguese)<br>2026 │ Avantika — L1 Support (current)",
+        blog: "I haven't published anything here yet. When I write about cybersecurity or things I'm learning along the way, it'll show up in this space. For now, LinkedIn is the fastest way to hear about it.",
+        privacidad: "This site doesn't use tracking cookies or collect personal data. I only store your language preference in your browser (localStorage) so you don't have to pick it every time — nothing else.",
+        contacto: 'You can email me at <a href="mailto:oportunidades@cortescalderon.com">oportunidades@cortescalderon.com</a>, or find me on <a href="https://www.linkedin.com/in/fernandocortesc/" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://github.com/fernandocortescalderon" target="_blank" rel="noopener">GitHub</a>.<br><br><img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&color=245-240-232&bgcolor=18-18-16&data=https://www.linkedin.com/in/fernandocortesc/" alt="QR code to LinkedIn" width="110" height="110" style="border-radius:4px;margin-top:0.5rem;">',
+        ayuda: "Available commands: <strong>soy</strong> (who I am) · <strong>experience</strong> · <strong>certifications</strong> · <strong>skills</strong> · <strong>education</strong> · <strong>projects</strong> · <strong>blog</strong> · <strong>privacy</strong> · <strong>contact</strong> · <strong>clear</strong>",
+        sudo: "Permission denied. Not even I have root access to my own life — but nice try. 🔒",
         unknown: (cmd) => `Command not recognized: "${cmd}". Type <strong>help</strong> to see the available options.`
       }
     },
@@ -368,17 +406,25 @@
       inputPlaceholder: "digite um comando…",
       pillExp: "experiência",
       pillCerts: "certificações",
+      pillSkills: "skills",
+      pillEdu: "educação",
       pillProjects: "projetos",
       pillContact: "contato",
       pillHelp: "ajuda",
       attribution: "Desenhado por Fernando · Construído com Claude",
       responses: {
-        soy: "Sou Fernando Cortés Calderón. Vivo na Cidade do México, trabalho em suporte técnico e estou direcionando essa experiência para a cibersegurança — de forma deliberada, não como uma ideia vaga. Estudo Java na universidade, falo espanhol, inglês e português, e quando não estou resolvendo tickets, construo meus próprios projetos digitais.<br><br>Digite <strong>experiência</strong>, <strong>certificações</strong> ou <strong>projetos</strong> para saber mais, ou <strong>contato</strong> se quiser conversar.",
-        experiencia: "Tenho mais de 4 anos em suporte técnico. Comecei na Rackspace México (2021), documentando processos de registro de domínios e configuração de DNS. Depois Zebra Technologies (2023), já aplicando parte do que aprendia nos meus estudos de segurança da informação para resolver casos sem precisar escalar. Passei pela AT&T (2025), sempre mantendo comunicação direta com os clientes por chat, e-mail e telefone. Agora trabalho na Avantika, na linha de frente do suporte nível 1.<br><br>Algo se repete em todos esses papéis: diagnóstico rápido, escalo quando necessário, e nunca deixo um caso sem uma explicação clara para quem o viveu.",
+        soy: "Sou Fernando Cortés Calderón. Vivo na Cidade do México, trabalho em suporte técnico e estou direcionando essa experiência para a cibersegurança — de forma deliberada, não como uma ideia vaga. Curso a Licenciatura em Informática, falo espanhol, inglês e português, e quando não estou resolvendo tickets, construo meus próprios projetos digitais.<br><br>Digite <strong>experiência</strong>, <strong>certificações</strong> ou <strong>projetos</strong> para saber mais, ou <strong>contato</strong> se quiser conversar.",
+        experiencia: "Tenho mais de 4 anos em suporte técnico, quase sempre em ambientes corporativos globais e trilíngues. Comecei na Computacenter México e na Rackspace (2021–2022), administrando contas no Active Directory e configurando DNS. Depois PPG Business Services e Zebra Technologies (2023), já em suporte nível 1 para usuários de língua portuguesa. Dali passei a coordenar incidentes críticos como supervisor de Command Center na Eglobal (2023–2024), e depois AT&T e Codyfin (2024–2026), em suporte multilíngue e administração de contas. Agora trabalho na Avantika, na linha de frente do suporte nível 1.<br><br>Algo se repete em todos esses papéis: diagnóstico rápido, escalonamento quando necessário, e comunicação clara em qualquer um dos três idiomas que falo.<br><br>2021 │ Computacenter México — Service Desk Analista N1<br>2022 │ Rackspace — Suporte E-mail &amp; DNS<br>2023 │ PPG Business Services — Service Desk N1<br>2023 │ Zebra Technologies — Service Desk N1<br>2023–2024 │ Eglobal — Supervisor Command Center<br>2024–2025 │ AT&amp;T — Representante de Atendimento ao Cliente<br>2025–2026 │ Codyfin — Suporte Multilíngue (Português)<br>2026 │ Avantika — Suporte N1 (atual)",
         certificaciones: "Estou em processo de certificação em <strong>CompTIA Security+</strong>, <strong>Linux+</strong> e <strong>PenTest+</strong> — as três em andamento. É o próximo passo concreto rumo à cibersegurança, não um plano vago: a lógica é pegar o que já sei de suporte técnico e direcionar para onde quero estar.",
-        proyectos: 'Fora do suporte técnico, eu construo coisas. Fundei a <strong>Nexus Labs AI</strong>, uma empresa de desenvolvimento de software onde experimento com ideias próprias e aprendo fazendo — você pode conhecê-la em <a href="https://nexuslabsai.dev" target="_blank" rel="noopener">nexuslabsai.dev</a>.',
-        contacto: 'Você pode me escrever em <a href="mailto:oportunidades@cortescalderon.com">oportunidades@cortescalderon.com</a>, ou me encontrar no <a href="https://www.linkedin.com/in/fernandocortesc/" target="_blank" rel="noopener">LinkedIn</a> e <a href="https://github.com/fernandocortescalderon" target="_blank" rel="noopener">GitHub</a>.',
-        ayuda: "Comandos disponíveis: <strong>soy</strong> (quem sou) · <strong>experiência</strong> · <strong>certificações</strong> · <strong>projetos</strong> · <strong>contato</strong> · <strong>limpar</strong>",
+        skills: "<strong>Sistemas</strong><br>Windows (avançado) · Linux (conhecimento operacional, CompTIA Linux+ em andamento)<br><br><strong>Identidade e produtividade</strong><br>Active Directory · Office 365 · Hosted Exchange<br><br><strong>Redes</strong><br>Configuração de DNS · diagnóstico TCP/IP básico · resolução de conectividade<br><br><strong>Operações de TI</strong><br>Gestão de tickets · escalonamento por SLA · resposta a incidentes · suporte remoto<br><br><strong>Programação</strong><br>Python (básico) · Java (em andamento, universidade)<br><br><strong>Segurança</strong> (em desenvolvimento)<br>CompTIA Security+ e PenTest+, em andamento<br><br><strong>Idiomas</strong><br>Espanhol (nativo) · Inglês (C1) · Português (C1)",
+        educacion: "Licenciatura em Informática — Universidad de Londres (2026–atual)<br>Engenharia em Segurança da Informação — Instituto Artek (2021–2022, suspensa)<br>Marketing — Centro Universitario Incarnate Word (2013–2015, incompleta)",
+        proyectos: 'Fora do suporte técnico, eu construo coisas. Fundei a <strong>Nexus Labs AI</strong> em março de 2026 — uma empresa de desenvolvimento de software e serviços de TI, com registro de marca em processo junto ao IMPI (classes 41 e 42) e incorporação em andamento como Sociedad por Acciones Simplificada. Lá liderei o desenvolvimento do <strong>gestorOS</strong>, uma plataforma de ponto de venda e gestão para restaurantes, incluindo sua estratégia de preços e a documentação de conformidade com proteção de dados exigida no México. Você pode conhecê-las em <a href="https://nexuslabsai.dev" target="_blank" rel="noopener">nexuslabsai.dev</a> e <a href="https://gestoros.app" target="_blank" rel="noopener">gestoros.app</a>.',
+        timeline: "2021 │ Computacenter México — Service Desk Analista N1<br>2022 │ Rackspace — Suporte E-mail &amp; DNS<br>2023 │ PPG Business Services — Service Desk N1<br>2023 │ Zebra Technologies — Service Desk N1<br>2023–2024 │ Eglobal — Supervisor Command Center<br>2024–2025 │ AT&amp;T — Representante de Atendimento ao Cliente<br>2025–2026 │ Codyfin — Suporte Multilíngue (Português)<br>2026 │ Avantika — Suporte N1 (atual)",
+        blog: "Ainda não publiquei nada aqui. Quando eu escrever sobre cibersegurança ou o que estou aprendendo pelo caminho, vai aparecer neste espaço. Por enquanto, o LinkedIn é a forma mais rápida de saber.",
+        privacidad: "Este site não usa cookies de rastreamento nem coleta dados pessoais. Só guardo sua preferência de idioma no navegador (localStorage) para não perguntar toda vez — nada mais.",
+        contacto: 'Você pode me escrever em <a href="mailto:oportunidades@cortescalderon.com">oportunidades@cortescalderon.com</a>, ou me encontrar no <a href="https://www.linkedin.com/in/fernandocortesc/" target="_blank" rel="noopener">LinkedIn</a> e <a href="https://github.com/fernandocortescalderon" target="_blank" rel="noopener">GitHub</a>.<br><br><img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&color=245-240-232&bgcolor=18-18-16&data=https://www.linkedin.com/in/fernandocortesc/" alt="Código QR para o LinkedIn" width="110" height="110" style="border-radius:4px;margin-top:0.5rem;">',
+        ayuda: "Comandos disponíveis: <strong>soy</strong> (quem sou) · <strong>experiência</strong> · <strong>certificações</strong> · <strong>skills</strong> · <strong>educacao</strong> · <strong>projetos</strong> · <strong>blog</strong> · <strong>privacidade</strong> · <strong>contato</strong> · <strong>limpar</strong>",
+        sudo: "Permissão negada. Nem eu tenho acesso root à minha própria vida — mas boa tentativa. 🔒",
         unknown: (cmd) => `Comando não reconhecido: "${cmd}". Digite <strong>ajuda</strong> para ver as opções disponíveis.`
       }
     }
@@ -388,10 +434,16 @@
     soy: ['soy', 'whoami', 'who'],
     experiencia: ['experiencia', 'experience', 'experiência'],
     certificaciones: ['certificaciones', 'certifications', 'certificados', 'certificações'],
+    skills: ['skills', 'habilidades', 'habilidades técnicas'],
+    educacion: ['educacion', 'educación', 'education', 'educacao', 'educação'],
     proyectos: ['proyectos', 'projects', 'projetos'],
+    timeline: ['timeline', 'linea de tiempo', 'línea de tiempo', 'linha do tempo'],
+    blog: ['blog'],
+    privacidad: ['privacidad', 'privacy', 'privacidade'],
     contacto: ['contacto', 'contact', 'contato'],
     ayuda: ['ayuda', 'help', 'ajuda'],
-    limpiar: ['limpiar', 'clear', 'limpar']
+    limpiar: ['limpiar', 'clear', 'limpar'],
+    sudo: ['sudo']
   };
 
   let currentLang = 'es';
